@@ -26,6 +26,6 @@ _ionic build ios_ (This needs Xcode to be installed)
 
 _ionic emulate ios_ (This needs ios-sim to be installed, install using npm install -g ios-sim)
 
-###Time to see it realtime, You can use ionicview to see your app in action, ionicview is available on itunes and google play store
+#####Time to see it realtime, You can use _ionicview_ to see your app in action, ionicview is available on itunes and google play store
 
 _ionic upload_ ( Give your ionicview credentials to start viewing it)
