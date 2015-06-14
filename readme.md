@@ -1,5 +1,6 @@
 #**_Commands to install and start ionic_** 
 
+####Install cordova and ionic, Install XCode if you want to build for ios
 _npm install -g cordova ionic_
 
 ####Create one using
