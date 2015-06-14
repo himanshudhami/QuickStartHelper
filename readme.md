@@ -1,30 +1,31 @@
-Commands to install and start ionic 
+#**_Commands to install and start ionic_** 
 
-npm install -g cordova ionic
+_npm install -g cordova ionic_
 
-Create one using 
-ionic start myApp 
+###Create one using
 
-or clone an existing one
+_ionic start myApp_ 
 
-git clone ....myApp.git
+###or clone an existing one
 
-Move to the project directory
+_git clone ....myApp.git_
 
-cd myApp
+###Move to the project directory
 
-Add needed platform
+_cd myApp_
 
-ionic platform add ios or android
+###Add required platform
 
-Build the application for the platform
+_ionic platform add **ios** or **android**_
 
-ionic build ios ( This needs Xcode to be installed)
+###Build the application for the platform
 
-Start the emulator
+_ionic build ios_ (This needs Xcode to be installed)
 
-ionic emulate ios (This needs ios-sim to be installed, install using npm install -g ios-sim)
+###Start the emulator
 
-Time to see it realtime, You can use ionicview to see your app in action, ionicview is available on itunes and google play store
+_ionic emulate ios_ (This needs ios-sim to be installed, install using npm install -g ios-sim)
 
-ionic upload ( Give your ionicview credentials to start viewing it)
+##Time to see it realtime, You can use ionicview to see your app in action, ionicview is available on itunes and google play store
+
+_ionic upload_ ( Give your ionicview credentials to start viewing it)
