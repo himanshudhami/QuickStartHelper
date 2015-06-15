@@ -24,3 +24,14 @@ tar xvzf kafka_2.10-0.8.2.1.tgz
 ### Start using the command
 bin/kafka-server-start.sh config/server.properties
 
+### set JAVA8 and home variable
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+### Set latest JAVA to be the default one 
+
+sudo apt-get install oracle-java8-set-default
+
+###_Restart Machine_
