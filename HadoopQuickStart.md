@@ -30,23 +30,23 @@ cd /usr/local
 http://hadoop.apache.org/releases.html
 
 get the latest binary url, 
-1. use wget to get the file
+1. Use wget to get the file
 ```
 wget http://ftp.wayne.edu/apache/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
 ```
-2. extract files 
+2. Extract files 
 ```
 sudo tar -xzf hadoop-2.7.1.tar.gz
 ```
-3. move files to hadoop generic directory
+3. Move files to hadoop generic directory
 ```
 mv hadoop-2.7.1.tar.gz hadoop
 ```
-4. check hadoop
+4. Check hadoop
 ```
 hadoop/bin/hadoop version
 ```
-**should give**
+should give
 ```
 Hadoop 2.7.1
 Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 15ecc87ccf4a0228f35af08fc56de536e6ce657a
@@ -59,7 +59,7 @@ This command was run using /home/roshan/hadoop/share/hadoop/common/hadoop-common
 if it fails with JAVA_HOME not available
 set the JAVA_HOME at the *hadoop-env.sh* file under $HADOOP_HOME/conf or $HADOOP_HOME/etc/hadoop folder
 
-5. set ssh
+5. Set ssh
 install openssh if not already available.
 ```
 sudo apt-get install openssh-server
@@ -71,7 +71,8 @@ setup ssh for hadoop
 ssh-keygen -t rsa -P ""
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
 ```
-6. configure hadoop
+
+6. Configure Hadoop
 Once done, the next step is to configure Hadoop. All Hadoop configurations files are under $HADOOP_HOME/conf or $HADOOP_HOME/etc/hadoop folder. Hadoop configuration requires following three file configurations. A template file with the same name might be available.
 1. *hadoop-env.sh* - In this file we need to set the JAVA_HOME. This file already contains place holder for JAVA_HOME which is commented out so you just need to search for that uncomment the code.
 
