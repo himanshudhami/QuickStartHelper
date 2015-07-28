@@ -30,19 +30,19 @@ cd /usr/local
 http://hadoop.apache.org/releases.html
 
 get the latest binary url, 
-1. Use wget to get the file
+*Use wget to get the file
 ```
 wget http://ftp.wayne.edu/apache/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
 ```
-2. Extract files 
+* Extract files 
 ```
 sudo tar -xzf hadoop-2.7.1.tar.gz
 ```
-3. Move files to hadoop generic directory
+* Move files to hadoop generic directory
 ```
 mv hadoop-2.7.1.tar.gz hadoop
 ```
-4. Check hadoop
+* Check hadoop
 ```
 hadoop/bin/hadoop version
 ```
@@ -59,7 +59,7 @@ This command was run using /home/roshan/hadoop/share/hadoop/common/hadoop-common
 if it fails with JAVA_HOME not available
 set the JAVA_HOME at the *hadoop-env.sh* file under $HADOOP_HOME/conf or $HADOOP_HOME/etc/hadoop folder
 
-5. Set ssh
+* Set ssh
 install openssh if not already available.
 ```
 sudo apt-get install openssh-server
@@ -72,11 +72,11 @@ ssh-keygen -t rsa -P ""
 cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys 
 ```
 
-6. Configure Hadoop
+* Configure Hadoop
 Once done, the next step is to configure Hadoop. All Hadoop configurations files are under $HADOOP_HOME/conf or $HADOOP_HOME/etc/hadoop folder. Hadoop configuration requires following three file configurations. A template file with the same name might be available.
-  1. *hadoop-env.sh* - In this file we need to set the JAVA_HOME. This file already contains place holder for JAVA_HOME which is commented out so you just need to search for that uncomment the code.
+  + *hadoop-env.sh* - In this file we need to set the JAVA_HOME. This file already contains place holder for JAVA_HOME which is commented out so you just need to search for that uncomment the code.
 
-  2. *core-site.xml* - This requires configurations about the HDFS. Here we need to configure minimum two configurations viz. hadoop.tmp.dir and fs.default.name as shown below
+  + *core-site.xml* - This requires configurations about the HDFS. Here we need to configure minimum two configurations viz. hadoop.tmp.dir and fs.default.name as shown below
 ```
 <configuration>
 <property>
@@ -92,7 +92,7 @@ Once done, the next step is to configure Hadoop. All Hadoop configurations files
 </property>
 </configuration>
 ```
-  3. *mapred-site.xml* - This file is specific to Job Tracker settings. We should set this file as follows.
+  + *mapred-site.xml* - This file is specific to Job Tracker settings. We should set this file as follows.
 ```
 <configuration>
 <property>
@@ -105,14 +105,14 @@ The host and port that the MapReduce job tracker runs at. If "local", then jobs 
 </property>
 </configuration>
 ```
-  4. Now whatever folder we have specified in step 6.2, we should manually create that folder and give full rights to that folder. 
+  + Now whatever folder we have specified in step 6.2, we should manually create that folder and give full rights to that folder. 
 ```
 cd ~
 sudo mkdir -p /app/hadoop/tmp/
 sudo chmod -R 777 /app
 ```
 
-7. add environment variables
+* add environment variables
 Now it's time to export environment variables and add the entries in ~/.bashrc file. ~/.bashrc file is the script every time a user logs in. bashrc file is located under home directory of the user. To do so we have to do following. 
 ```
 sudo gedit ~/.bashrc
@@ -123,16 +123,16 @@ export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
 ```
 save and start a new terminal
 
-8. create folder structure
+* create folder structure
 ```
 hadoop namenode -format 
 ```
-9. give permissions to folder
+* give permissions to folder
 ```
 sudo chown -R **user_name** /usr/local/hadoop
 ```
 
-10. start hadoop
+* start hadoop
 ```
 cd /usr/local/Hadoop/bin/
 ./start-all.sh
@@ -140,20 +140,20 @@ cd /usr/local/Hadoop/bin/
 
 ##Spark
 -------------
-1. Get Apache Spark without hadoop Url
+* Get Apache Spark without hadoop Url
 http://spark.apache.org/downloads.html
 ```
 cd /
 cd /usr/local/
 wget http://supergsego.com/apache/spark/spark-1.4.1/spark-1.4.1-bin-without-hadoop.tgz
 ```
-2. extract and move to folder
+* extract and move to folder
 ```
 wget http://supergsego.com/apache/spark/spark-1.4.1/spark-1.4.1-bin-without-hadoop.tgz
 tar -xzf spark-1.4.1-bin-without-hadoop spark.tgz
 sudo mv spark-1.4.1-bin-without-hadoop spark
 ```
-3. set environment variables
+* set environment variables
 ```
 sudo gedit ~/.bashrc
 add the following lines
