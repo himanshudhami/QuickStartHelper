@@ -8,9 +8,9 @@ Pre-requisites: Java jdk,jre
 -------------
 
 Terminal command:
-'''javascript
+```
 sudo apt-get install scala
-'''
+```
 
 OR
 
