@@ -1,5 +1,5 @@
 #Spark installation instructions on Ubuntu
-======================
+******************************
 
 Pre-requisites: Java jdk,jre
 
