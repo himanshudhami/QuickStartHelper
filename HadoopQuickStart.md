@@ -74,9 +74,9 @@ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 6. Configure Hadoop
 Once done, the next step is to configure Hadoop. All Hadoop configurations files are under $HADOOP_HOME/conf or $HADOOP_HOME/etc/hadoop folder. Hadoop configuration requires following three file configurations. A template file with the same name might be available.
-1. *hadoop-env.sh* - In this file we need to set the JAVA_HOME. This file already contains place holder for JAVA_HOME which is commented out so you just need to search for that uncomment the code.
+  1. *hadoop-env.sh* - In this file we need to set the JAVA_HOME. This file already contains place holder for JAVA_HOME which is commented out so you just need to search for that uncomment the code.
 
-2. *core-site.xml* - This requires configurations about the HDFS. Here we need to configure minimum two configurations viz. hadoop.tmp.dir and fs.default.name as shown below
+  2. *core-site.xml* - This requires configurations about the HDFS. Here we need to configure minimum two configurations viz. hadoop.tmp.dir and fs.default.name as shown below
 ```
 <configuration>
 <property>
@@ -92,7 +92,7 @@ Once done, the next step is to configure Hadoop. All Hadoop configurations files
 </property>
 </configuration>
 ```
-3. *mapred-site.xml* - This file is specific to Job Tracker settings. We should set this file as follows.
+  3. *mapred-site.xml* - This file is specific to Job Tracker settings. We should set this file as follows.
 ```
 <configuration>
 <property>
@@ -105,7 +105,7 @@ The host and port that the MapReduce job tracker runs at. If "local", then jobs 
 </property>
 </configuration>
 ```
-4. Now whatever folder we have specified in step 6.2, we should manually create that folder and give full rights to that folder. 
+  4. Now whatever folder we have specified in step 6.2, we should manually create that folder and give full rights to that folder. 
 ```
 cd ~
 sudo mkdir -p /app/hadoop/tmp/
