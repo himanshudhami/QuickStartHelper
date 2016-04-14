@@ -1,0 +1,44 @@
+   public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        const string filename = @"C:\abc.pdf";
+        const string outputPath = @"D:\Todelete\";
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+
+            PdfDocument document = PdfReader.Open(filename);
+            var imagecount = document.PageCount;
+            document.Close();
+
+            for (int i = 1; i <= imagecount; i++)
+            {
+                LoadImage(filename, i);
+            }
+
+
+        }
+
+        public void LoadImage(string InputPDFFile, int PageNumber)
+        {
+
+            string outImageName = Path.GetFileNameWithoutExtension(InputPDFFile);
+            outImageName = outImageName + "_" + PageNumber.ToString() + "_.jpg";
+
+            GhostscriptJpegDevice dev = new GhostscriptJpegDevice(GhostscriptJpegDeviceType.Jpeg);
+            dev.GraphicsAlphaBits = GhostscriptImageDeviceAlphaBits.V_4;
+            dev.TextAlphaBits = GhostscriptImageDeviceAlphaBits.V_4;
+            dev.ResolutionXY = new GhostscriptImageDeviceResolution(290, 290);
+            dev.InputFiles.Add(InputPDFFile);
+            dev.Pdf.FirstPage = PageNumber;
+            dev.Pdf.LastPage = PageNumber;
+            dev.CustomSwitches.Add("-dDOINTERPOLATE");
+            dev.OutputPath = outputPath + outImageName;
+            dev.Process();
+
+        }
+    }
