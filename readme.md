@@ -46,3 +46,15 @@ Sign your release build apk. $ jarsigner -verbose -sigalg SHA1withRSA -digestalg
 Align your build with zipalign tool for android build tool. $ [Your Android SDK path]/build-tools/[Newest version number]/zipalign -v 4 android-release-unsigned.apk myapp-signed.apk If you keep getting command not find error, You can also just navigate to your android sdk folder, find the zipalign tool under build-tools, version number and drag the folder into your terminal to get the absolute path.
 
 #### Run ionic resources : If you get the icon and resources error
+
+
+#**_Commands for docker_** 
+
+####Some helpful commands
+
+### Remove all images and containers
+
+#### Delete all containers
+docker rm $(docker ps -a -q)
+#### Delete all images
+docker rmi $(docker images -q)
