@@ -58,3 +58,5 @@ Align your build with zipalign tool for android build tool. $ [Your Android SDK 
 docker rm $(docker ps -a -q)
 #### Delete all images
 docker rmi $(docker images -q)
+#### Delete all untagged images
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
